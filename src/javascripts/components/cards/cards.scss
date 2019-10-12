@@ -1,43 +1,48 @@
-card-container{
-  width: 300px;
-  height: 300px; 
-  margin: 20px; 
-  transform-style: preserve-3d;
-}
+// card-container{
+//   width: 300px;
+//   height: 300px; 
+//   margin: 20px; 
+//   transform-style: preserve-3d;
+// }
 
-.planetCard{
-width: 300px;
-height: 300px;
-margin-bottom: 10px;
-transition: transform 1s ease-in-out;
-/* transform-style: flat; */
-}
+// .planetCard{
+// width: 300px;
+// height: 300px;
+// margin-bottom: 10px;
+// transition: transform 1s ease-in-out;
+// /* transform-style: flat; */
+// }
 
-.planetCard:hover {
-  transform:rotateY(180deg); 
-}
+// .planetCard:hover {
+//   transform:rotateY(180deg); 
+// }
 
-.card figure{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  margin: 0px;
+// .card figure{
+//   width: 100%;
+//   height: 100%;
+//   margin: 0px;
 
-  /* flex-direction: column; */
-}
-figure .front {
-  text-align: center; 
-  position: static;
-  background-color: #000000;
-}
+//   /* flex-direction: column; */
+// }
+// .front {
+//   text-align: center; 
+//   background-color: #000000;
+//   z-index: 2;
+// }
 
-.back{
-  background-color: #000000;
-  color: #fff;
-  transform:rotateY(180deg); 
+// .back{
+//   background-color: #000000;
+//   color: #fff;
+//   transform:rotateY(180deg); 
  
-}
+// }
 
 h4{
   color: #fff;
+  text-align: center;
+}
+
+.planetCard{
+  width:200px;
+  height: 200px;
 }
