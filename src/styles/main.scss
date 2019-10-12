@@ -3,10 +3,13 @@
 body {
   background-image: url("../../images/stars.jpg");
   background-color: #cccccc;
-  height: 500px;
-  background-position: center;
+  // background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  
 };
 
+.card image{
+  width: 200px;
+  height: 200px;
+}
