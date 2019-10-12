@@ -1,5 +1,9 @@
 import 'bootstrap';
-
+import cards from './components/cards/cards';
 import '../styles/main.scss';
 
-console.error('hi');
+const init = () => {
+  cards.printCards();
+};
+
+init();
