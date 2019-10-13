@@ -27,10 +27,10 @@ const printCards = () => {
   for (let i = 0; i < planetList.length; i += 1) {
     const planet = planetList[i];
     domString += `
-      <div class="col-4 planetCard">
-        <h4 class="front">${planet.name}</h4>
-        <img class="planetImage back" src="${planet.imageUrl}" alt="${planet.name}" style="width: 100px; height:100px">
-    </div>
+          <div class="col-3 planetCard">
+            <h4 class="front">${planet.name}</h4>
+            <img class="planetImage back" src="${planet.imageUrl}" alt="${planet.name}">
+          </div>
     `;
   }
   domString += '</div>';
