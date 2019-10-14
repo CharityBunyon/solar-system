@@ -40,4 +40,10 @@ const printCards = () => {
 };
 
 
+// const modal = () => {
+// $('a[data-modal]').click(() => {
+//   $(this).modal();
+//   return false;
+// });
+
 export default { printCards };
