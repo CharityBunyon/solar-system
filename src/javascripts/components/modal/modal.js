@@ -9,8 +9,8 @@ const printModal = () => {
   for (let i = 0; i < planetList.length; i += 1) {
     const planet = planetList[i];
     const modalString = `
-    // <div class="modal fade bd-example-modal-lg" tab index="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    // <div class="modal-dialog modal-lg">
+    <div class=" charity modal fade bd-example-modal-lg" tab index="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <h3>${planet.name}</h3>
         <img class="planetImage back" src="${planet.imageUrl}" alt="${planet.name}">
@@ -26,8 +26,31 @@ const printModal = () => {
   }
 };
 
-const showModal = () => {
-  $('planetCard').click(printModal);
+// const showModal = () => {
+//   $.get('.planetCard').click(printModal);
+// };
+
+
+// const modalShowHide = () => {
+//   $(document).ready(() => {
+//     $.get('.planetCard').click(() => {
+//       printModal();
+//     });
+//   });
+// };
+
+const modalShowHide = () => {
+  $(document).ready(() => {
+    $.get('.planetCard').click(() => {
+      printModal();
+    });
+  });
 };
 
-export default { showModal };
+// const modalShowHide = () => {
+//   $(document).ready(() => {
+//     $.get('.planetCard').toggle('.charity');
+//   });
+// };
+
+export default { modalShowHide };

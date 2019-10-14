@@ -5,7 +5,7 @@ import '../styles/main.scss';
 
 const init = () => {
   cards.printCards();
-  modal.showModal();
+  modal.modalShowHide();
 };
 
 init();
