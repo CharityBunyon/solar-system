@@ -7,7 +7,7 @@ import '../styles/main.scss';
 const init = () => {
   cards.printCards();
   // search.printSearchForm();
-  modal.soloCardPrinter();
+  // modal.soloCardPrinter();
   modal.cardListener();
 };
 
