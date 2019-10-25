@@ -8,18 +8,18 @@ const planetList = planets.getPlanet;
 // eslint-disable-next-line no-unused-vars
 let currentPlanet;
 
-const soloCardPrinter = () => {
+const soloCardPrinter = (monkeyButt) => {
   $('#solarCards').toggleClass('d-none');
   const domString = `
       <button type="button" class="closebutton btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-            <img class="card-img-top" src="${planetList.imageUrl}" alt="Image of ${planetList.name}">
+            <img class="card-img-top" src="${monkeyButt.imageUrl}" alt="Image of ${monkeyButt.name}">
             <div class="">
-              <p class="card-text">Gas Planet:${planetList.isGasPlanet}</p>
-              <p class="card-text">Number of Moons:${planetList.numberOfMoons}</p>
-              <p class="card-text">Name of Largest Moon:${planetList.nameOfLargestMoon}</p>
+              <p class="card-text">Gas Planet:${monkeyButt.isGasPlanet}</p>
+              <p class="card-text">Number of Moons:${monkeyButt.numberOfMoons}</p>
+              <p class="card-text">Name of Largest Moon:${monkeyButt.nameOfLargestMoon}</p>
             </div>
           </div>
         </div>
@@ -42,9 +42,9 @@ const createModalEvent = (event) => {
   const selection = event.target;
   const planetName = $(selection).attr('id');
   for (let i = 0; i < planetList.length; i += 1) {
-    const chosenPlanet = planetList[i];
+    const chosenPlanet = planetList;
     if (chosenPlanet === planetName) {
-      currentPlanet = chosenPlanet;
+      soloCardPrinter(chosenPlanet);
     }
   }
   soloCardPrinter();
