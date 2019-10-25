@@ -5,44 +5,25 @@ import planets from '../../helpers/data/planetData';
 
 
 const soloCardPrinter = (monkeyButt) => {
-  // $('#solarCards').toggleClass('d-none');
   const domString = `
-    <div class="modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">${monkeyButt.name}/h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-          <img class="card-img-top" src="${monkeyButt.imageUrl}" alt="Image of ${monkeyButt.name}">
-          <div class="">
-            <p class="card-text">Gas Planet:${monkeyButt.isGasPlanet}</p>
-            <p class="card-text">Number of Moons:${monkeyButt.numberOfMoons}</p>
-            <p class="card-text">Name of Largest Moon:${monkeyButt.nameOfLargestMoon}</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Save changes</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    `;
-  utilities.printToDom('planetDetails', domString);
-  $('#planetDetails').toggleClass('d-none');
+    <div class="planetDeets card">
+    <div id="close">Close</div>
+      <img class="card-img-top" src="${monkeyButt.imageUrl}" alt="Image of ${monkeyButt.name}">
+      <div class="card-body">
+        <p class="card-text">Gas Planet:${monkeyButt.isGasPlanet}</p>
+        <p class="card-text">Number of Moons:${monkeyButt.numberOfMoons}</p>
+        <p class="card-text">Name of Largest Moon:${monkeyButt.nameOfLargestMoon}</p>
+    </div>`;
+  utilities.printToDom('solarCards', domString);
 };
 
-// const closeModalEvent = () => {
-//   $('#planetCards').toggleClass('d-none');
-//   $('#planetDetails').toggleClass('d-none');
-// };
+const closeModalEvent = () => {
+  $('createModalEvent').hide();
+};
 
-// const closeListener = () => {
-//   $('.closebutton').on('click', closeModalEvent);
-// };
+const closeListener = () => {
+  $('.closebutton').on('click', closeModalEvent);
+};
 
 const createModalEvent = (event) => {
   const selection = event.target;
@@ -54,7 +35,7 @@ const createModalEvent = (event) => {
       soloCardPrinter(chosenPlanet);
     }
   }
-  // closeListener();
+  closeListener();
 };
 
 const cardListener = () => {
