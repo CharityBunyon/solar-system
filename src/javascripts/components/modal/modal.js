@@ -1,56 +1,63 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 import utilities from '../../helpers/utilities';
 import './modal.scss';
-// import cards from './components/cards/cards';
 import planets from '../../helpers/data/planetData';
 
-const printModal = () => {
-  const planetList = planets.getPlanets();
-  for (let i = 0; i < planetList.length; i += 1) {
-    const planet = planetList[i];
-    const modalString = `
-    <div class=" charity modal fade bd-example-modal-lg" tab index="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <h3>${planet.name}</h3>
-        <img class="planetImage back" src="${planet.imageUrl}" alt="${planet.name}">
-        <p>Description: ${planet.description}</p>
-        <p>Is Gas Planet: ${planet.isGasPlanet}</p>
-        <p>Number of Moons: ${planet.numberOfMoons}</p>
-        <p>Name of Largest Moon: ${planet.nameOfLargestMoon}</p>
+const planetList = planets.getPlanet;
+
+// eslint-disable-next-line no-unused-vars
+let currentPlanet;
+
+const soloCardPrinter = () => {
+  $('#solarCards').toggleClass('d-none');
+  const domString = `
+      <button type="button" class="closebutton btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <img class="card-img-top" src="${planetList.imageUrl}" alt="Image of ${planetList.name}">
+            <div class="">
+              <p class="card-text">Gas Planet:${planetList.isGasPlanet}</p>
+              <p class="card-text">Number of Moons:${planetList.numberOfMoons}</p>
+              <p class="card-text">Name of Largest Moon:${planetList.nameOfLargestMoon}</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
     `;
-    utilities.printToDom('modal', modalString);
+  utilities.printToDom('planetDetails', domString);
+  $('#planetDetails').toggleClass('d-none');
+};
+
+const closeModalEvent = () => {
+  $('#planetCards').toggleClass('d-none');
+  $('#planetDetails').toggleClass('d-none');
+};
+
+const closeListener = () => {
+  $('.closebutton').on('click', closeModalEvent);
+};
+
+const createModalEvent = (event) => {
+  const selection = event.target;
+  const planetName = $(selection).attr('id');
+  for (let i = 0; i < planetList.length; i += 1) {
+    const chosenPlanet = planetList[i];
+    if (chosenPlanet === planetName) {
+      currentPlanet = chosenPlanet;
+    }
+  }
+  soloCardPrinter();
+  closeListener();
+};
+
+const cardListener = () => {
+  const pCards = ($('.planetCard'));
+  for (let i = 0; i < pCards.length; i += 1) {
+    const currentCard = pCards[i];
+    $(currentCard).on('click', createModalEvent);
   }
 };
 
-// const showModal = () => {
-//   $.get('.planetCard').click(printModal);
-// };
 
-
-// const modalShowHide = () => {
-//   $(document).ready(() => {
-//     $.get('.planetCard').click(() => {
-//       printModal();
-//     });
-//   });
-// };
-
-const modalShowHide = () => {
-  $(document).ready(() => {
-    $.get('.planetCard').click(() => {
-      printModal();
-    });
-  });
-};
-
-// const modalShowHide = () => {
-//   $(document).ready(() => {
-//     $.get('.planetCard').toggle('.charity');
-//   });
-// };
-
-export default { modalShowHide };
+export default { soloCardPrinter, cardListener };

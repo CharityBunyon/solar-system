@@ -27,7 +27,7 @@ const printCards = () => {
   for (let i = 0; i < planetList.length; i += 1) {
     const planet = planetList[i];
     domString += `
-          <div class="col-3 planetCard">
+          <div class="col-3 planetCard" id="${planet.name}">
             <h4 class="front">${planet.name}</h4>
             <img class="planetImage back" src="${planet.imageUrl}" alt="${planet.name}">
           </div>
@@ -38,12 +38,5 @@ const printCards = () => {
   showHide();
   $('.planetImage').hide();
 };
-
-
-// const modal = () => {
-// $('a[data-modal]').click(() => {
-//   $(this).modal();
-//   return false;
-// });
 
 export default { printCards };
