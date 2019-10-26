@@ -1,11 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  background-image: url("../../images/stars.jpg");
-  background-color: #cccccc;
-  // background-position: center;
-  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  background-image: url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif');
+  height: 100vh;
+  padding:0;
+  margin:0;
   
 };
 
+h1 {
+  font-size: 60px;
+}

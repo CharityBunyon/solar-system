@@ -6,13 +6,15 @@ import planets from '../../helpers/data/planetData';
 
 const soloCardPrinter = (monkeyButt) => {
   const domString = `
-    <div class="planetDeets card">
-    <div id="close">Close</div>
-      <img class="card-img-top" src="${monkeyButt.imageUrl}" alt="Image of ${monkeyButt.name}">
+    <div class="planetDeets">
+    <div id="close" class="col">Close</div>
+      <h3 class="planetTitle">${monkeyButt.name}</h3>
+      <img class="rounded mx-auto d-block" src="${monkeyButt.imageUrl}" alt="Image of ${monkeyButt.name}">
       <div class="card-body">
-        <p class="card-text">Gas Planet:${monkeyButt.isGasPlanet}</p>
-        <p class="card-text">Number of Moons:${monkeyButt.numberOfMoons}</p>
-        <p class="card-text">Name of Largest Moon:${monkeyButt.nameOfLargestMoon}</p>
+        <p class="card-text">Description: ${monkeyButt.description}</p>
+        <p class="card-text">Gas Planet: ${monkeyButt.isGasPlanet}</p>
+        <p class="card-text">Number of Moons: ${monkeyButt.numberOfMoons}</p>
+        <p class="card-text">Name of Largest Moon: ${monkeyButt.nameOfLargestMoon}</p>
     </div>`;
   utilities.printToDom('solarCards', domString);
 };
