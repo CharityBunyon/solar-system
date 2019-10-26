@@ -4,7 +4,9 @@
 Use this application to view the planets in the solar system. Click on each planet card to find an in depth description of each planet.
 
 ## Screenshots
-![Sandwich Maker Preview 1]()
+![Solar System Preview 1](https://raw.githubusercontent.com/CharityBunyon/solar-system/master/images/fullSite.jpg)
+
+![Solar System Preview 2](https://raw.githubusercontent.com/CharityBunyon/solar-system/master/images/individualCard.jpg)
 
 
 
