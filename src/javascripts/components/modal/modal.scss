@@ -1,0 +1,35 @@
+#close {
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#close:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+.planetDeets{
+ background-color: #000;
+ color: #fff;
+}
+
+.planetTitle{
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.planetDeets img {
+  width: 497px;
+  height: 400px;
+  justify-items: center;
+  padding: 10px;
+  text-align: center;
+}
+
+p{
+ margin-left: 20px;
+}
