@@ -8,10 +8,11 @@ import './search.scss';
 const printSearch = () => {
   const domString = `
   <form onsubmit='return false'>
-  <div class='form-row'>
-      <div class="form-group col-md-6 offset-md-2 col-8">
-      <input type='text' class='form-control' id='myInput' placeholder='Enter Search Term'/>
-      </div>
+  <div class='search-box'>
+      <input type='text' class='search-txt' id='myInput' placeholder='Search...'/>
+      <a class="search-btn" href="#">
+      <img src="../../images/search.png" alt="" class="icon">
+      </a>
   </div>
   </form>
 `;
@@ -22,7 +23,7 @@ const printSearch = () => {
 const search = () => {
   $(document).ready(() => {
     $('#myInput').keyup(() => {
-      const value = $('#myInput').val().toLowerCase();
+      const value = $('#myInput').val().toUpperCase();
       $('.planetCard').hide();
       $(`.planetCard:contains("${value}")`).closest('.planetCard').show();
     });
