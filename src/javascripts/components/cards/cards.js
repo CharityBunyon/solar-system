@@ -22,7 +22,7 @@ const showHide = () => {
 
 const printCards = () => {
   const planetList = planets.getPlanets();
-  let domString = `<div class="row">
+  let domString = `<div class="row planetRow">
   `;
   for (let i = 0; i < planetList.length; i += 1) {
     const planet = planetList[i];
