@@ -11,7 +11,7 @@ const printSearch = () => {
   <div class='search-box'>
       <input type='text' class='search-txt' id='myInput' placeholder='Search...'/>
       <a class="search-btn" href="#">
-      <img src="../../images/search.png" alt="" class="icon">
+      <img src="https://raw.githubusercontent.com/CharityBunyon/solar-system/master/images/search.png" alt="" class="icon">
       </a>
   </div>
   </form>
