@@ -1,4 +1,4 @@
-input{
+input{ 
   color: #000;
 }
 #searchBar{
@@ -21,7 +21,7 @@ input{
 .icon {
   height: 20px;
   width: 20px;
-  color: white;
+  // color: white;
 }
 
 .search-btn{
@@ -41,7 +41,7 @@ input{
   outline: none;
   float:left;
   padding: 0px;
-  color: #000;
+  // color: #000;
   font-size: 16px;
   transition: 0.4s;
   line-height: 40px;
